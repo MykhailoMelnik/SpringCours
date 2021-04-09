@@ -2,6 +2,8 @@ package com.melnik.spring.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,7 +19,8 @@ public class MyControlLer {
     }
 
     @RequestMapping("askDetail")
-    public String askEmployeeDetails() {
+    public String askEmployeeDetails(Model model) {
+        model.addAttribute("employee", new Employee());
         return "ask-emp-details-employee";
     }
 
@@ -32,9 +35,9 @@ public class MyControlLer {
 //    }
 
     @RequestMapping("showDetails")
-    public String showEmpDetails(@RequestParam("employeeName") String name, Model model) {
-        name = "Mr. " + name + "!";
-        model.addAttribute("nameAttribute", name);
+    public String showEmpDetails(@ModelAttribute("employee") Employee employee) {
+
+
         return "show-emp-details";
     }
 }
