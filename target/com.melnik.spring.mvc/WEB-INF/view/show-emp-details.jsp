@@ -20,8 +20,8 @@ Car: ${employee.car}
 <br><br>
 Language:
 <ul>
-<c:forEach  items="${employee.languages}">
-    <li>${employee.languages}</li>
+<c:forEach var="lang" items="${employee.languages}">
+    <li>${lang}</li>
 </c:forEach>
 </ul>
 </body>
