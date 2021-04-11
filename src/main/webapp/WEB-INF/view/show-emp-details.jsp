@@ -18,11 +18,13 @@ Department: ${employee.department}
 <br><br>
 Car: ${employee.car}
 <br><br>
+phone number ${employee.phoneNumber}
+<br><br>
 Language:
 <ul>
-<c:forEach var="lang" items="${employee.languages}">
-    <li>${lang}</li>
-</c:forEach>
+    <c:forEach var="lang" items="${employee.languages}">
+        <li>${lang}</li>
+    </c:forEach>
 </ul>
 </body>
 </html>
